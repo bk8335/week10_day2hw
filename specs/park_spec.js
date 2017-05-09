@@ -20,7 +20,7 @@ describe("Park", function() {
   it("add dinosaur to park", function() {
     park1.add(dinosaur2);
     assert.equal(1, park1.enclosure.length);
-  })
+  });
 
   it("remove all Triceratops from the park", function() {
     park1.add(dinosaur2);
@@ -29,15 +29,23 @@ describe("Park", function() {
     assert.equal(3, park1.enclosure.length);
     park1.removeByType("Triceratops");
     assert.equal(1, park1.enclosure.length);
-  })
+  });
 
-  // it("return all dinosaurs with >2 children", function() {
-  //   park1.add(dinosaur2);
-  //   park1.add(dinosaur3);
-  //   park1.add(dinosaur4);
-  //   var result = park1.returnDinosaursWithTwoKids();
-  //   assert.equal(2, result.length);
-  // })
+  it("return all dinosaurs with >2 children", function() {
+    park1.add(dinosaur2);
+    park1.add(dinosaur3);
+    park1.add(dinosaur4);
+    var result = park1.returnDinosaursWithTwoKids();
+    assert.equal(2, result.length);
+  });
+
+  it("dinoCounter should return 24", function() {
+    park1.add(dinosaur2);
+    park1.add(dinosaur3);
+    park1.add(dinosaur4);
+    // var result = park1.dinosaursAfterOneYear();
+    assert.equal(24, park1.dinosaursAfterOneYear() );
+  });
 
 });
 

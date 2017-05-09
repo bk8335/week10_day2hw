@@ -25,7 +25,26 @@ Park.prototype = {
   },
 
   returnDinosaursWithTwoKids: function(){
+    var multipleKidsArray = []
+    for(var dinosaur of this.enclosure){
+      if(dinosaur.offspringPerYear > 2){
+        multipleKidsArray.push(dinosaur);
+      }
+    }
+    return multipleKidsArray;
+  },
 
+  dinosaursAfterOneYear: function(){
+    var dinoCounter = 0;
+    for(var dinosaur of this.enclosure){
+      dinoCounter += 1;
+      dinoCounter += dinosaur.offspringPerYear;
+      }
+    return dinoCounter;
+  },
+
+  dinosaursAfterTwoYears: function(dinosaursAfterOneYear){
+    
   }
 
 };
