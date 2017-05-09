@@ -54,8 +54,14 @@ describe("Park", function() {
     park1.add(dinosaur6);
     var result = park1.dinosaursAfterTwoYears();
     assert.equal(20, result );
+  });
 
-  })
+  // it("dinoCounter after 3 years", function() {
+  //   park1.add(dinosaur5);
+  //   park1.add(dinosaur6);
+  //   var result = park1.dinosaursAfterXYears();
+  //   assert.equal(55, result );
+  // });
 
 });
 

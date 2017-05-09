@@ -53,6 +53,17 @@ Park.prototype = {
         dinoCounter += 1;
       }
     return dinoCounter;
+  },
+
+  dinosaursAfterXYears: function(){
+    this.years = 3;
+    var dinoCounter = 0;
+    for(var dinosaur of this.enclosure){
+      for(i=0; i<= this.years; i++){
+        dinoCounter += (dinosaur.offspringPerYear ** this.years);
+      }
+    }
+    return dinoCounter;
   }
 
 };
