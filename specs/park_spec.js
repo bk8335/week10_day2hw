@@ -11,6 +11,8 @@ describe("Park", function() {
     dinosaur2 = new Dinosaur("Velociraptor", 8);
     dinosaur3 = new Dinosaur("Triceratops", 1);
     dinosaur4 = new Dinosaur("Triceratops", 12);
+    dinosaur5 = new Dinosaur("Tyrannosaurus", 2);
+    dinosaur6 = new Dinosaur("Velociraptor", 3);
   })
 
   it("park enclosure starts empty", function() {
@@ -43,17 +45,15 @@ describe("Park", function() {
     park1.add(dinosaur2);
     park1.add(dinosaur3);
     park1.add(dinosaur4);
-    // var result = park1.dinosaursAfterOneYear();
-    assert.equal(24, park1.dinosaursAfterXYears(1) );
+    var result = park1.dinosaursAfterOneYear();
+    assert.equal(24, result );
   });
 
   it("dinoCounter after 2 years", function() {
-    park1.add(dinosaur2);
-    park1.add(dinosaur3);
-    park1.add(dinosaur4);
-    var result = park1.dinosaursAfterXYears(2);
-    // should be 12^2 + 1^2 + 8^2
-    assert.equal(215, result );
+    park1.add(dinosaur5);
+    park1.add(dinosaur6);
+    var result = park1.dinosaursAfterTwoYears();
+    assert.equal(20, result );
 
   })
 

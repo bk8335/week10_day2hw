@@ -34,16 +34,26 @@ Park.prototype = {
     return multipleKidsArray;
   },
 
-  dinosaursAfterXYears: function(years){
-    this.years = years;
+  dinosaursAfterOneYear: function(){
+    this.years = 1;
     var dinoCounter = 0;
     for(var dinosaur of this.enclosure){
-      dinoCounter += this.years;
-      dinoCounter += dinosaur.offspringPerYear ** this.years;
+        dinoCounter += (dinosaur.offspringPerYear ** this.years);
+        dinoCounter += 1;
+      }
+    return dinoCounter;
+  },
+  
+  dinosaursAfterTwoYears: function(){
+    this.years = 2;
+    var dinoCounter = 0;
+    for(var dinosaur of this.enclosure){
+        dinoCounter += (dinosaur.offspringPerYear ** this.years);
+        dinoCounter += (dinosaur.offspringPerYear ** (this.years - 1));
+        dinoCounter += 1;
       }
     return dinoCounter;
   }
-  
 
 };
 
