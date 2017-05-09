@@ -44,8 +44,18 @@ describe("Park", function() {
     park1.add(dinosaur3);
     park1.add(dinosaur4);
     // var result = park1.dinosaursAfterOneYear();
-    assert.equal(24, park1.dinosaursAfterOneYear() );
+    assert.equal(24, park1.dinosaursAfterXYears(1) );
   });
+
+  it("dinoCounter after 2 years", function() {
+    park1.add(dinosaur2);
+    park1.add(dinosaur3);
+    park1.add(dinosaur4);
+    var result = park1.dinosaursAfterXYears(2);
+    // should be 12^2 + 1^2 + 8^2
+    assert.equal(215, result );
+
+  })
 
 });
 
